@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      terraform: 1.1.0
+    commands:
+      - echo "Installing AWS CLI..."
+      - apt-get update && apt-get install -y awscli
+  pre_build:
+    commands:
+      - echo "Downloading Terraform Provider Plugins..."
+      - terraform init -backend=false
+  build:
+    commands:
+      - echo "Running Terraform Apply..."
+      - terraform apply -auto-approve
+  post_build:
+    commands:
+      - echo "Deployment Complete!"
