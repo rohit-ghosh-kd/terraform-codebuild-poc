@@ -13,11 +13,11 @@ phases:
   pre_build:
     commands:
       - echo "Downloading Terraform Provider Plugins..."
-      - terraform init -backend=false
+      - terraform init
   build:
     commands:
       - echo "Running Terraform Apply..."
-      - terraform destroy -auto-approve
+      - terraform apply -auto-approve
   post_build:
     commands:
       - echo "Deployment Complete!"
