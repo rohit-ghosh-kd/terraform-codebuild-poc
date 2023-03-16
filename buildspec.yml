@@ -17,4 +17,4 @@ phases:
   build:
     commands:
       - echo "Running Terraform Plan..."
-      - terraform plan -auto-approve
+      - terraform plan
