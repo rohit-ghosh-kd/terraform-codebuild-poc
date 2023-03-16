@@ -16,5 +16,8 @@ phases:
       - terraform init
   build:
     commands:
-      - echo "Running Terraform Plan..."
-      - terraform plan -auto-approve
+      - echo "Running Terraform Apply..."
+      - terraform apply -auto-approve
+  post_build:
+    commands:
+      - echo "Deployment Complete!"
